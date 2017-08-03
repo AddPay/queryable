@@ -1,0 +1,16 @@
+{
+  "name": "closurecode/queryable",
+  "description": "Query parameter based model queries for Laravel 5 by Stephen Lake",
+  "keywords": ["laravel", "queryable"],
+  "license": "MIT",
+  "type": "library",
+  "authors": [{
+    "name": "Stephen Lake",
+    "email": "stephen-lake@live.com"
+  }],
+  "autoload": {
+    "psr-4": {
+      "ClosureCode\\Queryable\\": "src/"
+    }
+  }
+}
