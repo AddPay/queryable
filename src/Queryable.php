@@ -146,7 +146,7 @@ trait Queryable
 
     private function isValidParam($param)
     {
-        if (isset($this->queryable[0]) && $this->queryable[0] == '*') {
+        if (isset($this->queryable[0]) && $this->queryable[0] == '*' && !in_array($this->hidden)) {
             return true;
         }
 
