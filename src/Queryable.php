@@ -1,9 +1,8 @@
 <?php
 
-namespace ClosureCode\Queryable;
+namespace ClosureCode\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 
 trait Queryable
 {
