@@ -1,6 +1,6 @@
 <?php
 
-namespace ClosureCode\Traits;
+namespace ClosureCode\Queryable\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 
