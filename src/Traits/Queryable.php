@@ -109,7 +109,7 @@ trait Queryable
     private function parseQueryMatch($queryMatch)
     {
         $object = (object) [
-          'key'       => $queryMatch[0],
+          'key'       => snake_case($queryMatch[0]),
           'method'    => 'where',
           'operator'  => $queryMatch[1],
           'value'     => $queryMatch[2],
