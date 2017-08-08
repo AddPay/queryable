@@ -116,7 +116,7 @@ trait Queryable
           'subQueries'=> [],
         ];
 
-        if ($object->operator == '=' || $object->operator == '!=') {
+        if (in_array($object->operator, ['=', '!=', '<', '>', '<=', '>='])) {
             if ($object->value == 'null') {
                 $object->method = ($object->operator == '=' ? 'whereNull' : 'whereNotNull');
                 unset($object->value);
@@ -132,7 +132,8 @@ trait Queryable
             }
 
             return $object;
-        } elseif ($object->operator == '!~' || $object->operator == '~') {
+        }
+        elseif ($object->operator == '!~' || $object->operator == '~') {
             if (str_contains($object->value, ',')) {
                 $object->value = explode(',', $object->value);
                 $object->method = ($object->operator == '!~' ? 'whereNotIn' : 'whereIn');
