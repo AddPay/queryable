@@ -160,6 +160,10 @@ trait Queryable
 
     private function isValidParam($param)
     {
+        if (in_array($param, ['orderBy', 'order_by'])) {
+            return true;
+        }
+
         return in_array($param, $this->queryable) && !in_array($param, $this->hidden);
     }
 }
