@@ -31,17 +31,19 @@ class Post extends Model
 }
 ```
 
-Define an endpoint to fetch `Posts`'s and attach your desired query parameters.
+Define an endpoint to fetch `Post`'s and attach your desired query parameters.
 
-`https://yourdomain.yourtld/posts?name=ExampleName&title=*FooBar*&created_at<2017-08-08`
+`/posts?name=ExampleName&title=*FooBar*&created_at<2017-08-08`
 
-Now when you call `Post::get()`, the following will be prepended to the query builder:
+Now when you call `Post::get()`, the relevant queries will autmatically be prepended to the query builder:
+
+`Post::get()` becomes:
 
 ```php
 Posts::where('name', 'ExampleName')
      ->where('title', 'like', '%FooBar%')
      ->where('created_at', '<', '2017-08-08')
-     ->get()
+     ->get();
 ```
 
 ## Available Operators
