@@ -43,8 +43,32 @@ Posts::where('name', 'ExampleName')
 
 ## Available Operators
 
-### Where Equals
-`?<column>=<value>`
+### Where Equal
+`?column=value`
 
-### Where Not Equals
-`?<column>!=<value>`
+### Where Not Equal
+`?column!=value`
+
+### Where Greater Than
+`?column>value`
+
+### Where Greater Than or Equal
+`?column>=value`
+
+### Where Less Than
+`?column<=value`
+
+### Where Less Than or Equal
+`?column<=value`
+
+### Where In
+`?column~value`
+
+### Where Not In
+`?column!~value`
+
+### Where Like
+`?column=*value*`
+
+### Order By
+`?orderBy=column,asc|desc`
