@@ -133,11 +133,11 @@ trait Queryable
                 $pars = explode(',', $object->value);
 
                 $object->method = 'orderBy';
-                $object->key = $pars[0];
+                $object->key = snake_case($pars[0]);
                 $object->value = 'asc';
 
                 if (count($pars) == 2) {
-                    $object->value = $pars[1];
+                    $object->value = strtolower($pars[1]);
                 }
 
                 unset($object->operator);
