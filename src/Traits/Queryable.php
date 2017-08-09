@@ -131,10 +131,11 @@ trait Queryable
                 }
             } elseif ($object->key == 'order_by') {
                 $pars = explode(',', $object->value);
+                $pars[0] = snake_case($pars[0]);
 
                 if ($this->isValidParam($pars[0])) {
                     $object->method = 'orderBy';
-                    $object->key = snake_case($pars[0]);
+                    $object->key = $pars[0];
                     $object->value = 'asc';
 
                     if (count($pars) == 2) {
@@ -142,6 +143,8 @@ trait Queryable
                     }
 
                     unset($object->operator);
+                } else {
+                  return false;
                 }
             }
 
