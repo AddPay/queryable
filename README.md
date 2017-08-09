@@ -79,8 +79,9 @@ You can chain queries using ampersands (`&`) like so:
 ### Modifying Queryables
 If you need to change the allowed queryable columns or prefer not to define them on the model directly, you can call `setQueryable($columns)` or `addQueryable($column)` on the model. To clear all queryables, call `clearQueryable()`.
 
-```Post::setQueryable(['name',])->get();```
-```Post::clearQueryable()->addQueryable('name')->addQueryable('type')->get();```
+`Post::setQueryable(['name',])->get();`
+
+`Post::clearQueryable()->addQueryable('name')->addQueryable('type')->get();`
 
 ### Model Ordering
 An additional `orderBy` query parameter is available to assist in the ordering of the result:
