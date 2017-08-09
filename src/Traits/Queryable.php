@@ -69,7 +69,7 @@ trait Queryable
                 // whereNull, whereNotNull
                 $queryBuilder->{$query->method}($query->key);
             } elseif (!isset($query->operator)) {
-                // whereIn, whereNotIn
+                // whereIn, whereNotIn, or orderBy
                 $queryBuilder->{$query->method}($query->key, $query->value);
             } else {
                 $queryBuilder->{$query->method}($query->key, $query->operator, $query->value);
@@ -113,7 +113,7 @@ trait Queryable
           'method'    => 'where',
           'operator'  => $queryMatch[1],
           'value'     => $queryMatch[2],
-          'subQueries'=> [],
+          'arg'       => '',
         ];
 
         if (in_array($object->operator, ['=', '!=', '<', '>', '<=', '>='])) {
@@ -129,11 +129,22 @@ trait Queryable
                     $object->operator= 'like';
                     $object->value = substr($object->value, 0, -1) . '%';
                 }
+            } elseif ($object->key == 'order_by') {
+                $pars = explode(',', $object->value);
+
+                $object->method = 'orderBy';
+                $object->key = $pars[0];
+                $object->value = 'asc';
+
+                if (count($pars) == 2) {
+                    $object->value = $pars[1];
+                }
+
+                unset($object->operator);
             }
 
             return $object;
-        }
-        elseif ($object->operator == '!~' || $object->operator == '~') {
+        } elseif ($object->operator == '!~' || $object->operator == '~') {
             if (str_contains($object->value, ',')) {
                 $object->value = explode(',', $object->value);
                 $object->method = ($object->operator == '!~' ? 'whereNotIn' : 'whereIn');
@@ -147,10 +158,6 @@ trait Queryable
 
     private function isValidParam($param)
     {
-        if (isset($this->queryable[0]) && $this->queryable[0] == '*' && !in_array($param, $this->hidden)) {
-            return true;
-        }
-
-        return in_array($param, $this->queryable);
+        return in_array($param, $this->queryable) && !in_array($param, $this->hidden);
     }
 }
