@@ -32,8 +32,11 @@ Define an endpoint to fetch `Posts`'s and attach your desired query parameters.
 
 `https://yourdomain.yourtld/posts?name=ExampleName&title=*FooBar*&created_at<2017-08-08`
 
-Now when you call `Post::get()`, the query builder will be appended with the following:
+Now when you call `Post::get()`, the following will be prepended to the query builder:
 
-- **name=ExampleName:** `->where('name', 'ExampleName')`
-- **title=\*FooBar\*:** `->where('title', 'like', '%FooBar%')`
-- **created_at<2017-08-08:** `->where('created_at', '<', '2017-08-08')`
+```php
+Posts::where('name', 'ExampleName')
+     ->where('title', 'like', '%FooBar%')
+     ->where('created_at', '<', '2017-08-08')
+     ->get()
+```
