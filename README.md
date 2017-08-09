@@ -77,7 +77,8 @@ Posts::where('name', 'ExampleName')
 
 ### Chaining
 You can chain queries using ampersands (`&`) like so:
-`?name=\*test\*&created_at<2017&orderBy=created_at,desc`
+
+`?name=*test*&created_at<2017&orderBy=created_at,desc`
 
 ### Modifying Queryables
 If you need to change the allowed queryable columns or prefer not to define them on the model directly, you can call `setQueryable($columns)` or `addQueryable($column)` on the model. To clear all queryables, call `clearQueryable()`.
