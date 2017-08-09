@@ -18,6 +18,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+
+  use Queryable;
+  
   protected $queryable = [
      'id',
      'title',
