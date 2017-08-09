@@ -40,3 +40,11 @@ Posts::where('name', 'ExampleName')
      ->where('created_at', '<', '2017-08-08')
      ->get()
 ```
+
+## Available Operators
+
+### Where Equals
+`?<column>=<value>`
+
+### Where Not Equals
+`?<column>!=<value>`
