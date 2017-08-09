@@ -90,4 +90,4 @@ An additional `orderBy` query parameter is available to assist in the ordering o
 The `column` must be defined as an allowed `$queryable` field, otherwise the `orderBy` parameter will be ignored.
 
 ### Hidden Fields
-Any fields defined within the models `$hidden` variable will be ignored from queries.
+Any fields defined within the model's `$hidden` variable will be ignored from queries.
