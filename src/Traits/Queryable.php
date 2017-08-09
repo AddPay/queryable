@@ -132,15 +132,17 @@ trait Queryable
             } elseif ($object->key == 'order_by') {
                 $pars = explode(',', $object->value);
 
-                $object->method = 'orderBy';
-                $object->key = snake_case($pars[0]);
-                $object->value = 'asc';
+                if ($this->isValidParam($pars[0])) {
+                    $object->method = 'orderBy';
+                    $object->key = snake_case($pars[0]);
+                    $object->value = 'asc';
 
-                if (count($pars) == 2) {
-                    $object->value = strtolower($pars[1]);
+                    if (count($pars) == 2) {
+                        $object->value = strtolower($pars[1]);
+                    }
+
+                    unset($object->operator);
                 }
-
-                unset($object->operator);
             }
 
             return $object;
