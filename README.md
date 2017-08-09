@@ -70,5 +70,23 @@ Posts::where('name', 'ExampleName')
 ### Where Like
 `?column=*value*`
 
-### Order By
+## Important Notes
+
+### Chaining
+You can chain queries using ampersands (`&`) like so:
+`?name=\*test\*&created_at<2017&orderBy=created_at,desc`
+
+### Modifying Queryables
+If you need to change the allowed queryable columns or prefer not to define them on the model directly, you can call `setQueryable($columns)` or `addQueryable($column)` on the model. To clear all queryables, call `clearQueryable()`.
+
+`Post::setQueryable(['name',])->get();`
+`Post::clearQueryable()->addQueryable('name')->addQueryable('type')->get();`
+
+### Model Ordering
+An additional `orderBy` query parameter is available to assist in the ordering of the result:
 `?orderBy=column,asc|desc`
+
+The `column` must be defined as an allowed `$queryable` field, otherwise the `orderBy` parameter will be ignored.
+
+### Hidden Fields
+Any fields defined within the models `$hidden` variable will be ignored from queries.
