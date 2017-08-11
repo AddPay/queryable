@@ -1,7 +1,7 @@
 # Queryable
 Query parameter based model queries for [Laravel 5](https://www.laravel.com) by [Stephen Lake](https://stephenlake.github.io).
 
-![Banner](http://i.imgur.com/9jTDorM.jpg)
+![Banner](http://i.imgur.com/UeuefGN.jpg)
 
 ## Installation
 
