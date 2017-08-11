@@ -1,5 +1,7 @@
 # Queryable
-Query parameter based model queries for Laravel 5 by Stephen Lake
+Query parameter based model queries for [Laravel 5](https://www.laravel.com) by [Stephen Lake](https://stephenlake.github.io).
+
+![Banner](http://i.imgur.com/gRSC5Ck.jpg)
 
 ## Installation
 
