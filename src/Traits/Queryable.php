@@ -9,11 +9,11 @@ trait Queryable
     private $queryPattern = '/([!=|<=|<|>=|>|=|!~|~])/m';
     private $queries = [];
 
-    public static function bootQueryable()
+    public function scopeWithQueryables($query)
     {
-        static::addGlobalScope('queryables', function (Builder $builder) {
-            $builder->getModel()->parseQueryParams($builder);
-        });
+        $this->parseQueryParams($query);
+
+        return $query;
     }
 
     public function setQueryable(array $queryable)
@@ -144,7 +144,7 @@ trait Queryable
 
                     unset($object->operator);
                 } else {
-                  return false;
+                    return false;
                 }
             }
 
