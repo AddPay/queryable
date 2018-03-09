@@ -150,12 +150,10 @@ trait Queryable
 
             return $object;
         } elseif ($object->operator == '!~' || $object->operator == '~') {
-            if (str_contains($object->value, ',')) {
-                $object->value = explode(',', $object->value);
-                $object->method = ($object->operator == '!~' ? 'whereNotIn' : 'whereIn');
-                unset($object->operator);
-                return $object;
-            }
+            $object->value = str_contains($object->value, ',') ? explode(',', $object->value) : [$object->value];
+            $object->method = ($object->operator == '!~' ? 'whereNotIn' : 'whereIn');
+            unset($object->operator);
+            return $object;
         }
 
         return false;
