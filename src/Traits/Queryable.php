@@ -161,7 +161,7 @@ trait Queryable
 
     private function isValidParam($param)
     {
-        if (in_array($param, ['orderBy', 'order_by'])) {
+        if ($this->queryable[0] == '*') {
             return true;
         }
 
