@@ -2,7 +2,7 @@
 Query parameter based model queries for [Laravel 5](https://www.laravel.com) by [Stephen Lake](https://stephenlake.github.io).
 
 <center>
- <img src="https://i.imgur.com/uAwXf2L.png" style="align: center;">
+ <img src="https://i.imgur.com/lKP4tJR.png" style="align: center;">
 </center>
 
 ## Installation
