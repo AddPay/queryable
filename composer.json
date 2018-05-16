@@ -1,12 +1,12 @@
 {
   "name": "closurecode/queryable",
-  "description": "Query parameter based model queries for Laravel 5 by Stephen Lake",
+  "description": "Query parameter based model queries for Laravel 5",
   "keywords": ["laravel", "queryable"],
   "license": "MIT",
   "type": "library",
   "authors": [{
     "name": "Stephen Lake",
-    "email": "stephen-lake@live.com"
+    "email": "stephen@closurecode.com"
   }],
   "autoload": {
     "psr-4": {
