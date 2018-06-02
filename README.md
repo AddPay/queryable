@@ -1,5 +1,6 @@
 <center>
- <img src="https://raw.githubusercontent.com/closurecode/assets/master/logo_dark.png" style="align: center;" width="400">
+ <img src="https://raw.githubusercontent.com/closurecode/assets/master/logo_dark.png" width="400">
+ <a href="https://www.closurecode.com/" target="_blank">www.closurecode.com</a>
 </center>
 
 # Queryable
