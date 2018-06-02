@@ -5,7 +5,7 @@
 </center>
 
 # Queryable
-Query parameter based model queries for [Laravel 5](https://www.laravel.com) by [Stephen Lake](https://stephenlake.github.io).
+Query parameter based model queries for [Laravel 5](https://www.laravel.com) by [Closure Code](https://github.com/closurecode).
 
 ## Installation
 
