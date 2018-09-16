@@ -1,11 +1,8 @@
-<center>
- <a href="https://www.closurecode.com/" target="_blank">
-  <img src="https://raw.githubusercontent.com/closurecode/assets/master/logo_dark.png" width="400">
- </a>
-</center>
+# No Longer Maintained
+Please use [Laravel Queryable](https://github.com/stephenlake/laravel-queryable) instead!
 
 # Queryable
-Query parameter based model queries for [Laravel 5](https://www.laravel.com) by [Closure Code](https://github.com/closurecode).
+Query parameter based model queries for [Laravel 5](https://www.laravel.com) by [Stephen Lake](https://github.com/stephenlake).
 
 ## Installation
 
