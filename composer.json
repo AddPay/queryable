@@ -1,5 +1,5 @@
 {
-  "name": "closurecode/queryable",
+  "name": "addpay/queryable",
   "description": "Query parameter based model queries for Laravel 5",
   "keywords": ["laravel", "queryable"],
   "license": "MIT",
